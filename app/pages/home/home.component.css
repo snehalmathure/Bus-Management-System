@@ -1,0 +1,93 @@
+.banner
+{
+    background-image: url('../../../assets/busStop.png!sw800');
+    height: 800px;
+    background-position: center;
+    background-size: cover;
+}
+
+.content
+{
+    top: 30%;
+    left: 20%;
+    position: center;
+}
+.content h1 
+{
+    color: rgb(165, 8, 52);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 100px;
+  
+   padding-left: 25px;
+   padding-right: 25px;
+    
+
+}
+.content p{
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+
+
+   }
+   .content a{
+    text-decoration: none;
+    background-color: #fff;
+    color:var(--primary-color);
+    padding:20px 20px;
+    border-radius: 5px;
+    align-content: center;
+   }
+.button{
+    background-color:rgb(8, 12, 8);
+    color:rgb(255, 255, 255);
+    border-radius: 5px;
+    padding:20px 20px;
+    
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-weight: bold;
+    border:none;
+    transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  position: absolute;
+  top: 55%;
+  left: 45%;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+.button:hover {
+    background-color:azure;
+    color:#080808;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }

@@ -1,0 +1,75 @@
+<div class="banner">
+    <div class="content">
+        <h3>Royal Bus</h3>
+        <p>Add New Bus</p>
+        </div>
+<div class="Button" >
+
+    <button (click)="home()" class="button" style="margin-left: 10px"><i class="fa fa-arrow-circle-left"></i>Back</button>
+</div>
+<div class="container" >
+
+
+<div class="col-md-6 offset-md-3">
+    
+    <form (ngSubmit) = "onSubmit()">
+    <br>
+        <div class="form-group">
+            <label> DriverName</label>
+            <input type="text" class ="form-control" id = "driverName"
+                [(ngModel)] = "bus.driverName" name = "driverName">
+        </div>
+    
+        <div class="form-group">
+            <label>Source</label>
+            <input type="text" class ="form-control"id ="source"
+                [(ngModel)] = "bus.source"name ="source">
+        </div>
+    
+        <div class="form-group">
+            <label>Destination </label>
+            <input type="text" class ="form-control"id ="destination"
+                [(ngModel)] = "bus.destination"name ="destination">
+        </div>
+    
+        <div class="form-group">
+            <label> Ticket Price</label>
+            <input type="text" class ="form-control" id = "average_cost"
+                [(ngModel)] = "bus.average_cost" name = "average_cost">
+        </div>
+
+        <div class="form-group">
+            <label> Total Seat</label>
+            <input type="text" class ="form-control" id = "total_seat"
+                [(ngModel)] = "bus.total_seat" name = "total_seat">
+        </div>
+
+        <div>
+            <label class="form-group"> Bus Type </label><br>
+            <input class="form-check-input" type="radio" name="isACBus"
+                [(ngModel)]="bus.isACBus" value="true"/>
+            <label class="form-check-label"> AC Bus </label><br>
+
+            <input class="form-check-input" type="radio" name="isACBus"
+                [(ngModel)]="bus.isACBus" value="false"/>   
+            <label class="form-check-label">Non AC Bus </label></div><br>
+
+
+        <div class="form-group">
+            <label> Travels Name </label>
+            <input type="text" class ="form-control" id = "travelerName"
+                [(ngModel)] = "bus.travelerName" name = "travelerName">
+        </div>
+
+        <div class="form-group">
+            <label> Rating </label>
+            <input type="text" class ="form-control" id="ratings"
+                [(ngModel)] = "bus.ratings" name="ratings">
+        </div>
+    
+        <button class = "btn" type ="submit">Add Bus</button>   
+    
+    </form>
+    </div>
+</div>
+</div>

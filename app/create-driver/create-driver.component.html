@@ -1,0 +1,50 @@
+<div class="banner">
+    <div class="content">
+        <h3>Royal Bus</h3>
+        <p>Add New Driver</p>
+        </div>
+<div class="Button" >
+
+    <button (click)="home()" class="button" style="margin-left: 10px"><i class="fa fa-arrow-circle-left"></i>Back</button>
+</div>
+<div class="container" >
+
+
+<div class="col-md-6 offset-md-3">
+    
+    <form (ngSubmit) = "onSubmit()">
+    <br>
+        <div class="form-group">
+            <label> Driver Name</label>
+            <input type="text" class ="form-control" id = "name"
+                [(ngModel)] = "driver.name" name = "name">
+        </div>
+        <div class="form-group">
+        <label>Age</label>
+        <input type="text" class ="form-control" id = "age"
+            [(ngModel)] = "driver.age" name = "age">
+    </div>
+       
+        
+        <div class="form-group">
+            <label> Email </label>
+            <input type="text" class ="form-control" id = "driverEmail"
+                [(ngModel)] = "driver.driverEmail" name = "driverEmail">
+        </div>
+
+        <div class="form-group">
+            <label>Id Proof Number</label>
+            <input type="text" class ="form-control" id = "idProofNo"
+                [(ngModel)] = "driver.idProofNo" name = "idProofNo">
+        </div>
+
+       
+
+      
+        
+        <button class = "btn" type ="submit">Add Driver</button>   
+    
+    </form>
+    </div>
+</div>
+</div>

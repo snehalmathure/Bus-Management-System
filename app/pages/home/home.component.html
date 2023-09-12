@@ -1,0 +1,25 @@
+
+
+
+<div class="banner">
+    <div class="container" style="background-color: rgba(255, 255, 255, 0.386);">
+    <div class="content">
+        <h1 class="mb-5">WELCOME TO ROYAL BUS </h1>
+        <p>Welcome to Royal Bus Booking ,Login now to manage bus tickets and much more.</p>
+        <p>Book your Journey Now, Get Easy Bus!!</p><br>
+        <br>
+       
+    </div>
+    <div class="Button" >
+        
+        <button *ngIf="!loginService.isUserLoggedIn()" (click)="login()" style="width:auto;"class="button"><span>Get Start With Us</span></button>
+    
+    </div>
+    </div>
+  
+</div>
+<app-about></app-about>
+
+
+
+

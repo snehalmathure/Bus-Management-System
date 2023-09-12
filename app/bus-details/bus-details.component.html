@@ -1,0 +1,43 @@
+<div class="banner">
+    <div class="Title">
+        <h3>Royal Bus</h3>
+        <p>View Bus Details</p>
+        </div>
+<div class="Button" >
+
+    <button (click)="home()" class="button" style="margin-left: 10px"><i class="fa fa-arrow-circle-left"></i>Back</button>
+</div>
+<div class="container" >
+<div class="content">
+
+    <br>
+    <div>
+        <label class="form-group"> <b> Driver Name               :     </b></label> <span class="Details">     {{bus.driverName}}</span>
+    </div>
+    <div>
+        <label class="form-group"> <b> Source              :     </b></label> <span class="Details">        {{bus.source}}</span>
+    </div>
+    <div>
+        <label class="form-group"> <b> Destination              :     </b></label> <span class="Details">        {{bus.destination}}</span>
+    </div>
+    <div>
+        <label class="form-group"> <b> Ticket Price             :     </b></label> <span class="Details">       {{bus.average_cost}}</span>
+    </div>
+    <div>
+        <label class="form-group"> <b> Total Seat             :     </b></label> <span class="Details">      {{bus.total_seat}}</span>
+    </div>
+    <div>
+        <label class="form-group"> <b> Bus Type(AC/NonAC)             :     </b></label><span class="Details">    {{bus.isACBus}}</span>
+    </div>
+    <div>
+        <label class="form-group"> <b> travels Name             :     </b></label> <span class="Details">     {{bus.travelerName}}</span>
+    </div>
+    <div>
+        <label class="form-group"> <b> Rating             :     </b></label> <span class="Details">    {{bus.ratings}}</span>
+    </div>
+   
+    <button class = "btn" (click)="book(bus.busId)" type ="submit">Book Now</button>
+
+</div>
+</div>
+</div>

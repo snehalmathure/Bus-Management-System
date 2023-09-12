@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="">
+</head>
+<style>
+table{
+    box-shadow: -1px 12px 12px -6px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+    width:1500px;
+    
+    
+}
+
+table, td, th{
+  background: transparent;
+  background-color: rgba(240, 249, 249, 0.389);
+	border: 1px solid rgb(132, 132, 132);
+	border-collapse: collapse;
+	text-align: center;
+	cursor: pointer;
+ color:rgb(0, 0, 0);
+ font-size: 20px;
+ font-weight: 1000;
+ font-family: 'Times New Roman', Times, serif;
+  
+ 
+}
+
+th{
+	background-color:rgb(42, 39, 39);
+	color: white;
+  height:50px;
+  text-align:center;
+  font-size: large;
+}
+
+
+
+
+</style>
+<body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <div class="banner">
+    <div class="content">
+      <br>
+      <h3>Royal Bus</h3>
+      <br>
+      <br>
+    </div>
+    <div class="Button" >
+
+      <button (click)="home()" class="button" style="float:right;"><i class="fa fa-arrow-circle-left"></i>Back</button>
+  </div>
+    <div class="list row">
+      <div class="col-md-8">
+        <div class="input-group mb-3">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="input-group mb-3">
+                <div class="input-group-append" style="margin-left: 300px;">
+        <!--<div class="center" style="color: black; margin-left: 400px;">-->
+
+          <input *ngIf="selectedSearchType === 'travelerName'; else sourceAndDestination" type="text" class="form-control" 
+          [(ngModel)]="travelerName" placeholder="Search by travelsName " 
+          class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" 
+          style="background-color: white; color: black; border:3px solid gainsboro; border-top-left-radius: 25px; border-bottom-left-radius: 25px; width:660px;" />
+
+          <ng-template  #sourceAndDestination>
+            <input class="form-control" type="text" class="nav-link dropdown-toggle"
+             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+             style="border-bottom-left-radius: 25px; border-top-left-radius: 25px; width:330px;" 
+             name="source" placeholder="From:"  [(ngModel)]="source" />
+
+            <input class="form-control" type="text"class="nav-link dropdown-toggle" 
+            href="#" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false" 
+             style="border-right: transparent;width:330px;"name="destination" placeholder="To:"[(ngModel)]="destination" />
+           
+            </ng-template> 
+
+          <ul class="dropdown-menu">
+            <li><a id="01" class="dropdown-item" (click)="selectedSearchType = 'travelerName'"><b>Travels Name </b></a></li>
+            <li><a id="02" class="dropdown-item" (click)="selectedSearchType = 'sourceDestination'"><b>source And Destination </b></a></li>
+          </ul>
+
+          <button class="btn btn-outline-secondary" type="button" (click)="search(selectedSearchType)" style=" background-color:rgb(33, 31, 33); color:azure; border-top-right-radius: 25px; border-bottom-right-radius: 25px;">
+            Search
+          </button>
+
+
+
+          <!-- dropdown for Sorting -->
+          <div class="dropdown">
+            <li type="none" class="nav-item"> <h4 class="nav-link dropdown toggle" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false" style=" background-color:White; 
+               color:black; font-size: 20px; text-align: center; border: #20191b; border-radius: 25px; width: 150px;
+                margin-left: 50px;">Sort By <i class="fa fa-caret-down"></i></h4>
+            <ul class="dropdown-menu">
+            <li><a (click)="sortBy('costHigh')" class="dropdown-item"><b>Cost High to Low</b></a></li>
+            <li><a (click)="sortBy('costLow')" class="dropdown-item"><b>Cost Low to High</b></a></li>
+            <li><a (click)="sortBy('ratingHigh')" class="dropdown-item"><b>Rating High to Lows</b></a></li>
+            <li><a (click)="sortBy('ratingLow')" class="dropdown-item"><b>Rating Low to High</b></a></li>
+            </ul>
+            </li>
+          </div>
+
+          <!-- Dropdown for Category -->
+                  <div >
+                  <li type="none" class="nav-item"> <h4 class="nav-link dropdown toggle" role="button" data-bs-toggle="dropdown" 
+                    aria-expanded="false" style=" background-color:White; color:black; 
+                    font-size: 20px; text-align: center; border: #20191b; border-radius: 25px;width: 150px; 
+                    margin-left: 50px;">Category <i class="fa fa-caret-down"></i></h4>
+                    <ul class="dropdown-menu">
+                    <li><a (click)="getACBus()" class="dropdown-item"><b>AC Bus</b></a></li>
+                    <li><a (click)="getNonACBus()" class="dropdown-item"><b>Non AC Bus</b></a></li>
+                    </ul>
+                    </li>
+                  </div>
+                    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- <button class="btn btn-outline-secondary" type="button" (click)="getACBus()" style="margin-left:60px;color:#EEE2DC;
+        background:#20191b;font-size:17px;font-weight: 600;"> AC Bus </button>
+
+     <button class="btn btn-outline-secondary" type="button" (click)="getNonACBus()"
+         style="color:#EEE2DC;background: #221a1c;font-size:17px;font-weight: 600;"> Non AC Bus </button>-->
+
+       
+        
+       
+      <br><br>          
+                   
+      
+    </div>
+
+   
+  
+ 
+ 
+<table class =" table table-striped" style="margin-left: 150px;"  >
+  
+    <thead>
+      
+        <tr>
+            <th> Driver Name</th>
+            <th> Source</th>
+            <th>  Destination </th>
+            <th> Ticket Price</th>
+            <th> TotalSeats </th>
+            <th> Type </th> 
+            <th> Travels Name </th>
+            <th> Rating </th>
+            <th>Actions</th>
+
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let bus of buses | paginate: { itemsPerPage: count, currentPage: pageNo } " >
+          
+            <td> {{ bus.driverName }} </td>
+            <td> {{ bus.source }} </td>
+            <td> {{ bus.destination}} </td>
+            <td> {{ bus.average_cost }} </td>
+            <td> {{bus.total_seat}}</td>
+            <td>{{bus.isACBus}}</td>
+            <td>{{bus.travelerName}}</td>
+            <td>{{bus.ratings}}</td>
+
+            
+            <td>
+              <button (click)="updateBus(bus.busId)" class="btn" style="background-color: rgba(3, 39, 65, 0.455);border-color: rgba(0, 0, 0, 0.188); font-weight: bolder;  "><i class="fa fa-edit"></i>  Update</button>
+              <button (click)="busDetails(bus.busId)" class="btn " style="margin-left: 10px;background-color:rgba(33, 70, 9, 0.357);border-color: rgba(0, 0, 0, 0.188);font-weight: bolder;"><i class="fa fa-eye"></i>View Availability</button>
+              <button (click)="bookingList(bus.busId)" class="btn" style="margin-left: 10px;background-color: rgba(3, 39, 65, 0.455);border-color: rgba(0, 0, 0, 0.188);font-weight: bolder;"><i class="fa fa-eye"></i>Booking List</button>
+              <button (click)="deleteBus(bus.busId)" class="btn"  style="margin-left: 10px;background-color: rgba(133, 15, 15, 0.355);border-color: rgba(0, 0, 0, 0.188); "><i class="fa fa-trash"></i>  Delete</button>
+             
+            </td>
+        </tr>
+        
+       
+
+    </tbody>
+    
+</table><br>
+<div class="Button"  style="margin-left: 700px;">
+  <button (click) = "removeAllBuses()" style="margin-left: 150px;" class="btn btn-danger"> <i class="fa fa-trash"></i> Clear All Buses</button>
+</div>
+
+      
+<div  style="margin-left: 760px; font-size: larger; font-weight:bolder;">
+  <br><pagination-controls (pageChange)="pageNo = $event" ></pagination-controls> </div>
+</div>

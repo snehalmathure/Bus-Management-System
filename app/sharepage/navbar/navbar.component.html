@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+   <div class="container-fluid" >
+   
+      <a class="navbar-brand" routerLink="" style="font-family: bold ; font-size:28px;"><i class="fa fa-bus"></i> Royal Bus Liners</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink=""  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" ><i class="fa fa-fw fa-home"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <!--<a class="nav-link" routerLink="bus" routerLinkActive="active-link">Services</a>!-->
+           
+              
+            <li class="nav-item">
+              <a class="nav-link" routerLink="contact"  routerLinkActive="active-link"  >contact</a>
+            </li>
+           
+          
+            
+           
+        
+        <div class="dropdown">
+          <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLinkActive="active-link" >Services <i class="fa fa-caret-down"></i></a>
+           
+          <div class="dropdown-content">
+           
+            <a class="nav-link" routerLink="bus"><i class="fa fa-fw fa-info"></i> Available Services</a>
+            <a class="nav-link" routerLink="create-bus"><i class="fa fa-fw fa-plus"></i> Add Service</a>
+            <a class="nav-link" routerLink="driver"><i class="fa fa-fw fa-info"></i> Driver Details</a>
+            
+            <a class="nav-link" routerLink="create-driver"><i class="fa fa-fw fa-plus"></i> Add New Driver</a>
+           
+           
+          </div>
+        </div> 
+        <div class="dropdown">
+          <a  class="nav-link" routerLinkActive="active-link" ><i class="fa fa-fw fa-user"></i> Your Account <i class="fa fa-caret-down"></i></a>
+           
+          <div class="dropdown-content">
+           
+            <a *ngIf="!loginService.isUserLoggedIn()"class="nav-link" routerLink="login"> login </a>
+            <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="logout">Log out</a>
+            
+            
+           
+          </div>
+        </div>
+       
+       
+
+          
+          
+
+         <!--- <li class="nav-item">
+            <a class="nav-link" routerLink="about" routerLinkActive="active-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="contact" routerLinkActive="active-link">Contact</a>
+          </li>!-->
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
